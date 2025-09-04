@@ -27,56 +27,86 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        // 创建通用主机
-        Host = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
-            .ConfigureAppConfiguration(config =>
-            {
-                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            })
-            .ConfigureServices((context, services) =>
-            {
-                services.AddSingleton<MainViewModel>();
-                services.AddSingleton<MainWindow>();
-                services.AddSingleton<MainView>();
-            })
-            .ConfigureLogging(logging =>
-            {
-                logging.ClearProviders();
-                logging.AddConsole();
-            })
-            .Build();
-        
-        
-        _host = Host;
-        
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
-
-            var mainWindow = _host.Services.GetRequiredService<MainWindow>();
-            mainWindow.DataContext = _host.Services.GetRequiredService<MainViewModel>();
-            desktop.MainWindow = mainWindow;
-            
-            // desktop.MainWindow = new MainWindow
-            // {
-            //     DataContext = new MainViewModel()
-            // };
+            desktop.MainWindow = new MainWindow
+            {
+                DataContext = new MainViewModel()
+            };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
-            var mainView = _host.Services.GetRequiredService<MainView>();
-            mainView.DataContext = _host.Services.GetRequiredService<MainViewModel>();
-            singleViewPlatform.MainView = mainView;
-            
-            // singleViewPlatform.MainView = new MainView
-            // {
-            //     DataContext = new MainViewModel()
-            // };
+            singleViewPlatform.MainView = new MainView
+            {
+                DataContext = new MainViewModel()
+            };
         }
 
         base.OnFrameworkInitializationCompleted();
+
+        return;
+        
+        // // 如果使用 CommunityToolkit，则需要用下面一行移除 Avalonia 数据验证。
+        // // 如果没有这一行，数据验证将会在 Avalonia 和 CommunityToolkit 中重复。
+        // BindingPlugins.DataValidators.RemoveAt(0);
+        //
+        // // 注册应用程序运行所需的所有服务
+        // var collection = new ServiceCollection();
+        //
+        // // 创建通用主机
+        // Host = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
+        //     .ConfigureAppConfiguration(config =>
+        //     {
+        //         config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+        //     })
+        //     .ConfigureServices((context, services) =>
+        //     {
+        //         services.AddCommonServices();
+        //         services.AddSingleton<MainViewModel>();
+        //         services.AddSingleton<MainWindow>();
+        //         services.AddSingleton<MainView>();
+        //     })
+        //     .ConfigureLogging(logging =>
+        //     {
+        //         logging.ClearProviders();
+        //         logging.AddConsole();
+        //     })
+        //     .Build();
+        //
+        //
+        // _host = Host;
+        //
+        // if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        // {
+        //     // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
+        //     // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
+        //     DisableAvaloniaDataAnnotationValidation();
+        //
+        //     var mainWindow = _host.Services.GetRequiredService<MainWindow>();
+        //     mainWindow.DataContext = _host.Services.GetRequiredService<MainViewModel>();
+        //     desktop.MainWindow = mainWindow;
+        //     
+        //     // desktop.MainWindow = new MainWindow
+        //     // {
+        //     //     DataContext = new MainViewModel()
+        //     // };
+        // }
+        // else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
+        // {
+        //     var mainView = _host.Services.GetRequiredService<MainView>();
+        //     mainView.DataContext = _host.Services.GetRequiredService<MainViewModel>();
+        //     singleViewPlatform.MainView = mainView;
+        //     
+        //     // singleViewPlatform.MainView = new MainView
+        //     // {
+        //     //     DataContext = new MainViewModel()
+        //     // };
+        // }
+        //
+        // base.OnFrameworkInitializationCompleted();
     }
 
     private void DisableAvaloniaDataAnnotationValidation()

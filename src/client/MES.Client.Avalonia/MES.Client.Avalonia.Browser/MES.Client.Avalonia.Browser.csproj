@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
   <PropertyGroup>
-    <TargetFramework>net8.0-browser</TargetFramework>
+    <TargetFramework>net9.0-browser</TargetFramework>
     <OutputType>Exe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Nullable>enable</Nullable>
@@ -13,4 +13,13 @@
   <ItemGroup>
     <ProjectReference Include="..\MES.Client.Avalonia\MES.Client.Avalonia.csproj"/>
   </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="fonts\NotoSansSC-Thin.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <TargetPath>wwwroot\fonts\NotoSansSC-Thin.ttf</TargetPath>
+    </None>
+  </ItemGroup>
+  
 </Project>

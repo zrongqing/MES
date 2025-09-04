@@ -11,5 +11,9 @@
 
     <Application.Styles>
         <FluentTheme />
+        <!-- <Style Selector="Button,TextBox,Button,Window"> -->
+        <!--     <Setter Property="FontFamily" Value="Noto Sans SC" /> -->
+        <!--     <Setter Property="FontWeight" Value="Thin" /> -->
+        <!-- </Style> -->
     </Application.Styles>
 </Application>

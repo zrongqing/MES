@@ -12,5 +12,17 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  <Grid RowDefinitions="Auto,Auto">
+    <Button
+      Grid.Row="0"
+      Content="你好"
+      >
+    </Button>
+    <TextBlock
+      Grid.Row="1"
+      Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  </Grid>
+  
+  
+  
 </UserControl>

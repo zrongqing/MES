@@ -1,10 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MES.Client.Avalonia", "src\client\MES.Client.Avalonia\MES.Client.Avalonia\MES.Client.Avalonia.csproj", "{D04C8B08-2310-4E88-AB3A-AD23AACDB4FB}"
-EndProject
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clients", "clients", "{1C276EB2-D26B-457D-832D-58A92477D257}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MES.Client.Avalonia.Desktop", "src\client\MES.Client.Avalonia\MES.Client.Avalonia.Desktop\MES.Client.Avalonia.Desktop.csproj", "{ECB79DBA-2F3C-4CAF-BF5C-0DD718C1F89A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{0B0585D6-9069-44EE-BF97-3BC9E37B2033}"
 EndProject
@@ -14,9 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{5872D8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{C63B25D4-E819-4946-8914-B4DC4ECAE8B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MES.Client.Avalonia.Browser", "src\client\MES.Client.Avalonia\MES.Client.Avalonia.Browser\MES.Client.Avalonia.Browser.csproj", "{9B3BE5C4-9B4F-4A1B-AB3E-71B4B56E7A21}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Avaloniaui", "Avaloniaui", "{9F7AC386-DA30-4150-A3D4-4AB5183EB83B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MES.WPF.Client", "src\client\MES.WPF.Client\MES.WPF.Client.csproj", "{38D4EC47-EECB-4E37-8575-3451FCD115DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,23 +21,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D04C8B08-2310-4E88-AB3A-AD23AACDB4FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D04C8B08-2310-4E88-AB3A-AD23AACDB4FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D04C8B08-2310-4E88-AB3A-AD23AACDB4FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D04C8B08-2310-4E88-AB3A-AD23AACDB4FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ECB79DBA-2F3C-4CAF-BF5C-0DD718C1F89A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ECB79DBA-2F3C-4CAF-BF5C-0DD718C1F89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ECB79DBA-2F3C-4CAF-BF5C-0DD718C1F89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ECB79DBA-2F3C-4CAF-BF5C-0DD718C1F89A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B3BE5C4-9B4F-4A1B-AB3E-71B4B56E7A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B3BE5C4-9B4F-4A1B-AB3E-71B4B56E7A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B3BE5C4-9B4F-4A1B-AB3E-71B4B56E7A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B3BE5C4-9B4F-4A1B-AB3E-71B4B56E7A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D4EC47-EECB-4E37-8575-3451FCD115DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D4EC47-EECB-4E37-8575-3451FCD115DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D4EC47-EECB-4E37-8575-3451FCD115DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D4EC47-EECB-4E37-8575-3451FCD115DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{9F7AC386-DA30-4150-A3D4-4AB5183EB83B} = {1C276EB2-D26B-457D-832D-58A92477D257}
-		{D04C8B08-2310-4E88-AB3A-AD23AACDB4FB} = {9F7AC386-DA30-4150-A3D4-4AB5183EB83B}
-		{9B3BE5C4-9B4F-4A1B-AB3E-71B4B56E7A21} = {9F7AC386-DA30-4150-A3D4-4AB5183EB83B}
-		{ECB79DBA-2F3C-4CAF-BF5C-0DD718C1F89A} = {9F7AC386-DA30-4150-A3D4-4AB5183EB83B}
+		{38D4EC47-EECB-4E37-8575-3451FCD115DD} = {1C276EB2-D26B-457D-832D-58A92477D257}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {296B1228-96CA-489A-80F7-9A0AF3C13389}
 	EndGlobalSection
 EndGlobal

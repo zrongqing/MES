@@ -1,0 +1,134 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>MES.WPF.Client</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Syncfusion.Data.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Grid.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.PivotAnalysis.Base" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.PivotTable.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.PropertyGrid.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.SfBusyIndicator.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.SfGrid.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.SfGridCommon.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.SfInput.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.SfNavigationDrawer.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.SfSkinManager.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.SfTreeView.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Shared.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Shared.WPF.Classic" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.MaterialDark.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.MaterialDarkBlue.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.MaterialLight.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.MaterialLightBlue.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.Office2019Black.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.Office2019Colorful.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.Office2019DarkGray.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.Office2019HighContrast.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.Office2019White.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.Windows11Dark.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Themes.Windows11Light.WPF" Version="30.2.7" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="30.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+		<ItemGroup>
+		<Content Include="Assets\bk101.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Assets\bk102.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Assets\bk104.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Assets\bk106.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Assets\bk107.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	    <Content Include="Assets\bk109.jpg">
+           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+           </Content>
+        <Content Include="Assets\bk110.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Assets\bk112.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Assets\Books.xml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content><Content Include="Assets\nopreview.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+	</ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\treeview_exe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_folder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_img0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_img1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_mp3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_pdf.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_png.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_ppt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_video.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_word.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\treeview_zip.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+<ItemGroup>
+		<Content Include="Models\PaletteList.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+</Project>
+

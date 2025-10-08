@@ -4,6 +4,9 @@ using System.Windows.Data;
 
 namespace MES.WPF.Client.Converters
 {
+    /// <summary>
+    /// 枚举转换
+    /// </summary>
     public class EnumToBooleanConverter : IValueConverter
     {
         public Type EnumType { get; set; }

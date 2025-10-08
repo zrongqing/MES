@@ -3,15 +3,15 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:locals="clr-namespace:MES.WPF.Client"
-	  xmlns:local="clr-namespace:MES.WPF.Client.ViewModels"
       xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
       xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:sync="clr-namespace:Syncfusion.Windows.Tools.Controls;assembly=Syncfusion.Tools.Wpf"
+      xmlns:viewModels="clr-namespace:MES.WPF.Client.ViewModels"
+      xmlns:models="clr-namespace:MES.WPF.Client.Models"
       mc:Ignorable="d"
       Title="MainPage" Height="450" Width="800">
     <Page.DataContext>
-        <local:PropertyGridViewModel />
+        <viewModels:PropertyGridViewModel />
     </Page.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -37,7 +37,7 @@
                 SelectedPropertyItem="{Binding SelectedPropertyItem, Mode=TwoWay}"
                 SortDirection="Ascending">
             <syncfusion:PropertyGrid.SelectedObject>
-                <locals:Person />
+                <models:Person />
             </syncfusion:PropertyGrid.SelectedObject>
             </syncfusion:PropertyGrid>
         </Grid>

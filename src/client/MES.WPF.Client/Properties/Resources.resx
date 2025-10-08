@@ -66,17 +66,14 @@
     <data name="ShellPropertyGridPage" xml:space="preserve">
 		    <value>PropertyGrid</value>
     </data>
-    <data name="ShellPivotGridPage" xml:space="preserve">
-		    <value>PivotGrid</value>
-    </data>
     <data name="ShellMainPage" xml:space="preserve">
 		    <value>Main</value>
     </data>
     <data name="MainPageTitle" xml:space="preserve">
 		    <value>Main</value>
     </data>
-    <data name="ShellBusyIndicatorPage" xml:space="preserve">
-		    <value>BusyIndicator</value>
+    <data name="ShellKanbanPage" xml:space="preserve">
+		    <value>Kanban</value>
     </data>
     <data name="ShellGoBackButton" xml:space="preserve">
         <value>Go back</value>
@@ -183,7 +180,7 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-    <data name="AppDisplayName" xml:space="preserve">
+	<data name="AppDisplayName" xml:space="preserve">
 		<value>MES.WPF.Client</value>
 	</data>
 </root>

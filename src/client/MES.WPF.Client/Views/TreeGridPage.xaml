@@ -3,12 +3,12 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:local="clr-namespace:MES.WPF.Client.ViewModels"
       xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+      xmlns:viewModels="clr-namespace:MES.WPF.Client.ViewModels"
       mc:Ignorable="d"
       Title="MainWindow" Height="450" Width="700">
     <Page.Resources>
-        <local:TreeGridViewModel x:Key="viewModel"/>
+        <viewModels:TreeGridViewModel x:Key="viewModel"/>
     </Page.Resources>
     <Grid DataContext="{StaticResource viewModel}" Width="680">
         <syncfusion:SfTreeGrid 

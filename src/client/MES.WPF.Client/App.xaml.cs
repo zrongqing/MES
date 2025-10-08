@@ -2,14 +2,13 @@
 using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
-
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Contracts.Views;
+using MES.WPF.Client.Helpers;
 using MES.WPF.Client.Models;
 using MES.WPF.Client.Services;
 using MES.WPF.Client.ViewModels;
 using MES.WPF.Client.Views;
-
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,8 +30,9 @@ namespace MES.WPF.Client
 
         public App()
         {
-			// Add your Syncfusion license key for WPF platform with corresponding Syncfusion NuGet version referred in project. For more information about license key see https://help.syncfusion.com/common/essential-studio/licensing/license-key.
-			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXZedHVXRmNeVUVyXEJWYEk="); 
+            // Add your Syncfusion license key for WPF platform with corresponding Syncfusion NuGet version referred in project. For more information about license key see https://help.syncfusion.com/common/essential-studio/licensing/license-key.
+            // Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Add your license key here"); 
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXZedHVXRmNeVUVyXEJWYEk=");
         }
 
         private async void OnStartup(object sender, StartupEventArgs e)
@@ -43,7 +43,10 @@ namespace MES.WPF.Client
             _host = Host.CreateDefaultBuilder(e.Args)
                     .ConfigureAppConfiguration(c =>
                     {
-                        c.SetBasePath(appLocation);
+                        c.SetBasePath(appLocation)
+                            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                            .AddEnvironmentVariables()
+                            .AddCommandLine(e.Args);
                     })
                     .ConfigureServices(ConfigureServices)
                     .Build();
@@ -69,19 +72,22 @@ namespace MES.WPF.Client
             services.AddSingleton<IThemeSelectorService, ThemeSelectorService>();
             services.AddSingleton<IPageService, PageService>();
             services.AddSingleton<INavigationService, NavigationService>();
+            
+            // auto add views and viewmodels
+            services.AddViewsAndViewModels(assembly: Assembly.GetAssembly(this.GetType()));
 
             // Views and ViewModels
             services.AddTransient<IShellWindow, ShellWindow>();
             services.AddTransient<ShellViewModel>();
+            
+            services.AddTransient<IShellDialogWindow, ShellDialogWindow>();
+            services.AddTransient<ShellDialogViewModel>();
 
-            services.AddTransient<BusyIndicatorViewModel>();
-            services.AddTransient<BusyIndicatorPage>();
+            services.AddTransient<KanbanViewModel>();
+            services.AddTransient<KanbanPage>();
 
             services.AddTransient<MainViewModel>();
             services.AddTransient<MainPage>();
-
-            services.AddTransient<PivotGridViewModel>();
-            services.AddTransient<PivotGridPage>();
 
             services.AddTransient<PropertyGridViewModel>();
             services.AddTransient<PropertyGridPage>();
@@ -97,9 +103,7 @@ namespace MES.WPF.Client
 
             services.AddTransient<TreeViewViewModel>();
             services.AddTransient<TreeViewPage>();
-
-            services.AddTransient<IShellDialogWindow, ShellDialogWindow>();
-            services.AddTransient<ShellDialogViewModel>();
+            
 
             // Configuration
             services.Configure<AppConfig>(context.Configuration.GetSection(nameof(AppConfig)));

@@ -1,10 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows.Media;
-
 using MES.WPF.Client.Contracts.Views;
 using MES.WPF.Client.ViewModels;
-
 using Syncfusion.SfSkinManager;
 using Syncfusion.UI.Xaml.NavigationDrawer;
 using Syncfusion.Windows.Shared;

@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-
 using MES.WPF.Client.Contracts.Services;
 
 namespace MES.WPF.Client.Services

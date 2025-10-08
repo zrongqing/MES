@@ -1,0 +1,21 @@
+﻿<Page
+  x:Class="MES.WPF.Client.Views.KingdeePage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  mc:Ignorable="d"
+  Title="KingdeePage"
+  Height="450"
+  Width="800"
+  xmlns:syncfusion="clr-namespace:Syncfusion.UI.Xaml.Kanban;assembly=Syncfusion.SfKanban.WPF"
+  xmlns:viewModels="clr-namespace:MES.WPF.Client.ViewModels">
+  <Grid>
+    <Grid.DataContext>
+      <viewModels:KingdeeViewModel></viewModels:KingdeeViewModel>
+    </Grid.DataContext>
+    
+    <Label Content="这是一个金蝶测试面板"></Label>
+    
+  </Grid>
+</Page>

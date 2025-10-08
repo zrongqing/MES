@@ -1,4 +1,7 @@
-﻿namespace System.Windows.Controls
+﻿using System.Windows;
+using System.Windows.Controls;
+
+namespace MES.WPF.Client.Helpers
 {
     public static class FrameExtensions
     {

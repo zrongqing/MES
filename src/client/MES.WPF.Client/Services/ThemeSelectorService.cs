@@ -3,13 +3,10 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Models;
 using MES.WPF.Client.Views;
-
 using Microsoft.Win32;
-
 using Syncfusion.SfSkinManager;
 using Syncfusion.UI.Xaml.NavigationDrawer;
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
-
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.ViewModels;
@@ -18,14 +17,15 @@ namespace MES.WPF.Client.Services
         public PageService(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
-            Configure<BusyIndicatorViewModel, BusyIndicatorPage>();
+            Configure<KanbanViewModel, KanbanPage>();
             Configure<MainViewModel, MainPage>();
-            Configure<PivotGridViewModel, PivotGridPage>();
             Configure<PropertyGridViewModel, PropertyGridPage>();
             Configure<SettingsViewModel, SettingsPage>();
             Configure<TileViewViewModel, TileViewPage>();
             Configure<TreeGridViewModel, TreeGridPage>();
             Configure<TreeViewViewModel, TreeViewPage>();
+            
+            Configure<KingdeeViewModel, KingdeePage>();
         }
 
         public Type GetPageType(string key)

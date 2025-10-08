@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Media;
-
 using Syncfusion.Windows.Shared;
 
-namespace MES.WPF.Client
+namespace MES.WPF.Client.Models
 {
 	public class FileManager : NotificationObject
     {

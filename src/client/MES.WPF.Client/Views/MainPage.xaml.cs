@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-
 using MES.WPF.Client.ViewModels;
 
 namespace MES.WPF.Client.Views

@@ -1,6 +1,4 @@
-﻿using System;
-
-using MES.WPF.Client.Helpers;
+﻿using MES.WPF.Client.Helpers;
 
 namespace MES.WPF.Client.ViewModels
 {

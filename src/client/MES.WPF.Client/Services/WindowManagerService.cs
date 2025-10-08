@@ -2,11 +2,10 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Contracts.ViewModels;
 using MES.WPF.Client.Contracts.Views;
-
+using MES.WPF.Client.Helpers;
 using Syncfusion.Windows.Shared;
 
 namespace MES.WPF.Client.Services
@@ -36,7 +35,7 @@ namespace MES.WPF.Client.Services
             {
                 window = new ChromelessWindow()
                 {
-                    Title = "MES.WPF.Client",
+                    Title = "DevTool.Client",
                     Style = Application.Current.FindResource("CustomMetroWindow") as Style
                 };
                 var frame = new Frame()

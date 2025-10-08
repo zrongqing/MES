@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 using Syncfusion.Windows.Shared;
 
 namespace MES.WPF.Client.Helpers

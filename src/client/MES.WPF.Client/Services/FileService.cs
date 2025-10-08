@@ -1,8 +1,6 @@
 ﻿using System.IO;
 using System.Text;
-
 using MES.WPF.Client.Contracts.Services;
-
 using Newtonsoft.Json;
 
 namespace MES.WPF.Client.Services

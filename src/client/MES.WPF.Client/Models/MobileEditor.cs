@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-
 using Syncfusion.Windows.PropertyGrid;
 
-namespace MES.WPF.Client
+namespace MES.WPF.Client.Models
 {
     public class MobileEditor : MaskEditor
     {

@@ -2,12 +2,10 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Contracts.Views;
 using MES.WPF.Client.Models;
 using MES.WPF.Client.ViewModels;
-
 using Microsoft.Extensions.Hosting;
 
 namespace MES.WPF.Client.Services
@@ -66,7 +64,7 @@ namespace MES.WPF.Client.Services
                 _shellWindow = _serviceProvider.GetService(typeof(IShellWindow)) as IShellWindow;
                 _navigationService.Initialize(_shellWindow.GetNavigationFrame());
                 _shellWindow.ShowWindow();
-                _navigationService.NavigateTo(typeof(BusyIndicatorViewModel).FullName);
+                _navigationService.NavigateTo(typeof(KanbanViewModel).FullName);
                 await Task.CompletedTask;
             }
         }

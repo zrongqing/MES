@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
-
-using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Helpers;
-using MES.WPF.Client.Models;
-
 using Syncfusion.Windows.PropertyGrid;
 
 namespace MES.WPF.Client.ViewModels

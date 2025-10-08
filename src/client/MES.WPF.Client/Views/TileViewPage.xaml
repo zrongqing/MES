@@ -3,14 +3,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:MES.WPF.Client.ViewModels"
-	xmlns:locals="clr-namespace:MES.WPF.Client"
     xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+    xmlns:models="clr-namespace:MES.WPF.Client.Models"
+    xmlns:viewModels="clr-namespace:MES.WPF.Client.ViewModels"
     x:Class="MES.WPF.Client.Views.TileViewPage"
     mc:Ignorable="d"
     Title="MainPage" Height="450" Width="800">
     <Page.Resources>
-        <locals:PrefixSuffixConverter
+        <models:PrefixSuffixConverter
                 x:Key="PrefixSuffixConverter"
                 PrefixString="/Assets/"
                 SuffixString=".jpg" />
@@ -49,7 +49,7 @@
             </DataTemplate>
     </Page.Resources>
     <Page.DataContext>
-        <local:TileViewViewModel/>
+        <viewModels:TileViewViewModel/>
     </Page.DataContext>
     <Grid>
         <syncfusion:TileViewControl

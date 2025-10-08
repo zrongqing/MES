@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-
-using MES.WPF.Client.Contracts.Services;
+﻿using System.Collections.ObjectModel;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.Models;
 

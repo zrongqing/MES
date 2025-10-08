@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MES.WPF.Client.Models
+﻿namespace MES.WPF.Client.Models
 {
     public enum AppTheme
     {

@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Xml.Linq;
-
-using MES.WPF.Client;
-using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.Models;
-
-using Syncfusion.Windows.Shared;
 
 namespace MES.WPF.Client.ViewModels
 {

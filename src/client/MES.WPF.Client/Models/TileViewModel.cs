@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
-
 using Syncfusion.Windows.Shared;
 
-namespace MES.WPF.Client
+namespace MES.WPF.Client.Models
 {
     public class BookModel:NotificationObject
     {

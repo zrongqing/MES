@@ -1,6 +1,4 @@
-﻿using System;
-
-using MES.WPF.Client.Models;
+﻿using MES.WPF.Client.Models;
 
 namespace MES.WPF.Client.Contracts.Services
 {

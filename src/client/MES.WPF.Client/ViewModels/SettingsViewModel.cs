@@ -2,19 +2,15 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Xml;
-
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Contracts.ViewModels;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.Models;
-
 using Microsoft.Extensions.Options;
-
 using Syncfusion.SfSkinManager;
 using Syncfusion.Windows.Tools.Controls;
 
@@ -152,7 +148,7 @@ namespace MES.WPF.Client.ViewModels
 
         public void OnNavigatedTo(object parameter)
         {
-            VersionDescription = $"MES.WPF.Client - {_applicationInfoService.GetVersion()}";
+            VersionDescription = $"DevTool.Client - {_applicationInfoService.GetVersion()}";
             var theme = (AppTheme)Enum.Parse(typeof(AppTheme), SelectedTheme.Content.ToString().Replace(" ",""));
             _themeSelectorService.SetTheme(theme);
         }

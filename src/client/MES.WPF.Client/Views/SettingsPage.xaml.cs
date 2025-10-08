@@ -1,11 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-
+﻿using System.Windows.Controls;
 using MES.WPF.Client.Models;
 using MES.WPF.Client.ViewModels;
-
 using Syncfusion.SfSkinManager;
 using Syncfusion.Windows.Tools.Controls;
 

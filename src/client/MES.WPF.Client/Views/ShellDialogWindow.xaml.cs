@@ -1,9 +1,6 @@
 ﻿using System.Windows.Controls;
-
 using MES.WPF.Client.Contracts.Views;
 using MES.WPF.Client.ViewModels;
-
-using Syncfusion.SfSkinManager;
 using Syncfusion.Windows.Shared;
 
 namespace MES.WPF.Client.Views

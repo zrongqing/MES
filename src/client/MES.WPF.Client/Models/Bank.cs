@@ -1,22 +1,19 @@
 ﻿using System.ComponentModel;
-using System.Net;
 
-using Syncfusion.Windows.PropertyGrid;
-
-namespace MES.WPF.Client
+namespace MES.WPF.Client.Models
 {
     public class Bank
     {
-        [DisplayNameAttribute("Name")]
-        [DescriptionAttribute("Name of the bank.")]
+        [DisplayName("Name")]
+        [Description("Name of the bank.")]
         public string Name
         {
             get;
             set;
         }
 
-        [DisplayNameAttribute("Customer ID")]
-        [DescriptionAttribute("Customer ID used for Net Banking.")]
+        [DisplayName("Customer ID")]
+        [Description("Customer ID used for Net Banking.")]
         public string CustomerID
         {
             get;
@@ -24,7 +21,7 @@ namespace MES.WPF.Client
             set;
         }
 
-        [DescriptionAttribute("Password used for Net Banking.")]
+        [Description("Password used for Net Banking.")]
         [ReadOnly(true)]
         public string Password
         {
@@ -33,8 +30,8 @@ namespace MES.WPF.Client
             set;
         }
 
-        [DisplayNameAttribute("Account Number")]
-        [DescriptionAttribute("Bank Account Number.")]
+        [DisplayName("Account Number")]
+        [Description("Bank Account Number.")]
         public long AccountNumber
         {
             get;
@@ -43,7 +40,7 @@ namespace MES.WPF.Client
         }
 
 
-        [DescriptionAttribute("Address of Bank.")]
+        [Description("Address of Bank.")]
         [ReadOnly(true)]
         public Address Address
         {

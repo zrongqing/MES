@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
-
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Models;
-
 using Microsoft.Extensions.Options;
 
 namespace MES.WPF.Client.Services

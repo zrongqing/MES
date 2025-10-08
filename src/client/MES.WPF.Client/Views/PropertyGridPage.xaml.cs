@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using MES.WPF.Client.ViewModels;
 using Syncfusion.SfSkinManager;
+
 namespace MES.WPF.Client.Views
 {
     public partial class PropertyGridPage : Page

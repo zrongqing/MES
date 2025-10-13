@@ -45,6 +45,12 @@ public class AuthService
         return true;
     }
 
+    /// <summary>
+    /// 登录验证
+    /// </summary>
+    /// <param name="username">用户名</param>
+    /// <param name="password">用户密码</param>
+    /// <returns></returns>
     public async Task<string?> LoginAsync(string username, string password)
     {
         var profile = await _db.UserProfiles

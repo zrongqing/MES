@@ -5,41 +5,31 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using CommunityToolkit.Mvvm.ComponentModel;
 using MES.Client.Core.Contracts.Services;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.Properties;
 
 namespace MES.WPF.Client.ViewModels
 {
-    public class ShellViewModel : Observable
+    public partial class ShellViewModel : ObservableObject
     {
         private ICommand _optionsMenuItemInvokedCommand;
 
         private readonly INavigationService _navigationService;
-        private object _selectedMenuItem;
         private RelayCommand _goBackCommand;
         private ICommand _menuItemInvokedCommand;
         private ICommand _loadedCommand;
         private ICommand _unloadedCommand;
-
-        public object SelectedMenuItem
+        
+        [ObservableProperty]
+        private object _selectedMenuItem;
+        
+        partial void OnSelectedMenuItemChanged(object? oldValue, object newValue)
         {
-            get { return _selectedMenuItem; }
-            set
+            if (newValue is NavigationPaneItem { TargetType: not null } navigationPaneItem)
             {
-                if (value as NavigationPaneItem == null)
-                {
-                    Set(ref _selectedMenuItem, ((FrameworkElement)value).DataContext, "SelectedMenuItem");
-                }
-                else
-                {
-                    Set(ref _selectedMenuItem, value, "SelectedMenuItem");
-                }
-                
-                if (_selectedMenuItem is NavigationPaneItem { TargetType: not null } navigationPaneItem)
-                {
-                    NavigateTo(navigationPaneItem.TargetType);
-                }
+                NavigateTo(navigationPaneItem.TargetType);
             }
         }
 

@@ -1,8 +1,7 @@
-using MES.Api;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication2.Controllers;
+namespace MES.Api.Controllers;
 
 [Authorize]
 [ApiController]

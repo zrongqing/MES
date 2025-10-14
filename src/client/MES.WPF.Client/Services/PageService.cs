@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
-using MES.WPF.Client.Contracts.Services;
+using MES.Client.Core.Contracts.Services;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.ViewModels;
 using MES.WPF.Client.Views;

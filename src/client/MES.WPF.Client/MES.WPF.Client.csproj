@@ -133,6 +133,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MES.Client.Core\MES.Client.Core.csproj" />
+  </ItemGroup>
   
 </Project>
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Reflection;
-using MES.WPF.Client.Contracts.Services;
+using MES.Client.Core.Contracts.Services;
 
 namespace MES.WPF.Client.Services
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MES.WPF.Client.Contracts.Services
+﻿namespace MES.Client.Core.Contracts.Services
 {
     public interface IApplicationInfoService
     {

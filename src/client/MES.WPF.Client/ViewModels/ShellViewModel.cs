@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using MES.WPF.Client.Contracts.Services;
+using MES.Client.Core.Contracts.Services;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.Properties;
 

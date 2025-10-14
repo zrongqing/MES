@@ -2,8 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using MES.WPF.Client.Contracts.Services;
-using MES.WPF.Client.Contracts.ViewModels;
+using MES.Client.Core.Contracts.Services;
+using MES.Client.Core.Contracts.ViewModel;
 using MES.WPF.Client.Contracts.Views;
 using MES.WPF.Client.Helpers;
 using Syncfusion.Windows.Shared;

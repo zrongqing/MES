@@ -1,7 +1,9 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
+using MES.Client.Core.Contracts.Services;
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Contracts.Views;
 using MES.WPF.Client.Helpers;
@@ -22,11 +24,11 @@ namespace MES.WPF.Client
     // Tracking issue for improving this is https://github.com/dotnet/wpf/issues/1946
     public partial class App : Application
     {
-        private IHost _host;
+        private IHost? _host;
 
-        public T GetService<T>()
+        public T? GetService<T>()
             where T : class
-            => _host.Services.GetService(typeof(T)) as T;
+            => _host?.Services.GetService(typeof(T)) as T;
 
         public App()
         {
@@ -35,12 +37,20 @@ namespace MES.WPF.Client
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXZedHVXRmNeVUVyXEJWYEk=");
         }
 
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            // todo 启动前事件
+            base.OnStartup(e);
+        }
+
         private async void OnStartup(object sender, StartupEventArgs e)
         {
-            var appLocation = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            try
+            {
+                var appLocation = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
-            // For more information about .NET generic host see  https://docs.microsoft.com/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.0
-            _host = Host.CreateDefaultBuilder(e.Args)
+                // For more information about .NET generic host see  https://docs.microsoft.com/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.0
+                _host = Host.CreateDefaultBuilder(e.Args)
                     .ConfigureAppConfiguration(c =>
                     {
                         c.SetBasePath(appLocation)
@@ -51,7 +61,13 @@ namespace MES.WPF.Client
                     .ConfigureServices(ConfigureServices)
                     .Build();
 
-            await _host.StartAsync();
+                await _host.StartAsync();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                return;
+            }
         }
 
         private void ConfigureServices(HostBuilderContext context, IServiceCollection services)
@@ -104,16 +120,22 @@ namespace MES.WPF.Client
             services.AddTransient<TreeViewViewModel>();
             services.AddTransient<TreeViewPage>();
             
-
             // Configuration
             services.Configure<AppConfig>(context.Configuration.GetSection(nameof(AppConfig)));
         }
 
         private async void OnExit(object sender, ExitEventArgs e)
         {
-            await _host.StopAsync();
-            _host.Dispose();
-            _host = null;
+            try
+            {
+                await _host?.StopAsync()!;
+                _host.Dispose();
+                _host = null;
+            }
+            catch (Exception exception)
+            {
+                // TODO handle exception
+            }
         }
 
         private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

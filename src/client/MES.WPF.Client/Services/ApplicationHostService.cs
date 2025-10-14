@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using MES.Client.Core.Contracts.Services;
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Contracts.Views;
 using MES.WPF.Client.Models;

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using MES.Client.Core.Contracts.Services;
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Models;
 using MES.WPF.Client.Views;

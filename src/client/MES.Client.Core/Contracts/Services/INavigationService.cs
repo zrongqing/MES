@@ -1,7 +1,6 @@
-﻿using System;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
-namespace MES.WPF.Client.Contracts.Services
+namespace MES.Client.Core.Contracts.Services
 {
     public interface INavigationService
     {

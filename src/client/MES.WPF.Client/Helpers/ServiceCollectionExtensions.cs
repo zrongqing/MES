@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
 using System.Windows;
-using MES.WPF.Client.Contracts.ViewModels;
+using MES.Client.Core.Interfaces;
 using MES.WPF.Client.Contracts.Views;
 using Microsoft.Extensions.DependencyInjection;
 

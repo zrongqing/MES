@@ -2,6 +2,9 @@
 
 namespace MES.Client.Core.Contracts.Services
 {
+    /// <summary>
+    /// 导航服务接口
+    /// </summary>
     public interface INavigationService
     {
         event EventHandler<string> Navigated;

@@ -23,6 +23,7 @@
             <i:InvokeCommandAction Command="{Binding UnloadedCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
+    
     <syncfusion:ChromelessWindow.LeftHeaderItemsSource>
         <views:MyObservableCollection>
             <Button
@@ -43,9 +44,11 @@
         <syncfusion:SfNavigationDrawer 
             x:Name="navigationDrawer" 
             ItemsSource="{Binding MenuItems}" 
-            DisplayMemberPath="Label" DisplayMode="Expanded" 
+            DisplayMemberPath="Label" 
+            DisplayMode="Expanded" 
             IconMemberPath="Path" 
             SelectedItem="{Binding SelectedMenuItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            
             <syncfusion:SfNavigationDrawer.FooterItems>
                 <syncfusion:NavigationItem Header="Settings"  DataContext="{Binding Path=DataContext,ElementName=navigationDrawer}" Command="{Binding OptionsMenuItemInvokedCommand}" SelectionBackground="Transparent">
                     <syncfusion:NavigationItem.Icon>
@@ -61,6 +64,7 @@
                     </syncfusion:NavigationItem.Icon>
                 </syncfusion:NavigationItem>
             </syncfusion:SfNavigationDrawer.FooterItems>
+            
             <syncfusion:SfNavigationDrawer.ContentView>
                 <Frame
                     x:Name="shellFrame"

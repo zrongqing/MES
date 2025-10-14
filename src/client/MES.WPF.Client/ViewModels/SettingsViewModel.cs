@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Xml;
 using MES.Client.Core.Contracts.Services;
-using MES.Client.Core.Contracts.ViewModel;
+using MES.Client.Core.Contracts.ViewModels;
 using MES.WPF.Client.Contracts.Services;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.Models;

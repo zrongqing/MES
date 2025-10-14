@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Controls;
 using MES.Client.Core.Contracts.Services;
+using MES.Client.Core.Contracts.Views;
 using MES.Client.Core.Interfaces;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.ViewModels;

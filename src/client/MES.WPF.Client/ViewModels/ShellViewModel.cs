@@ -7,6 +7,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using CommunityToolkit.Mvvm.ComponentModel;
 using MES.Client.Core.Contracts.Services;
+using MES.Client.Core.Models;
 using MES.WPF.Client.Helpers;
 using MES.WPF.Client.Properties;
 
@@ -27,7 +28,7 @@ namespace MES.WPF.Client.ViewModels
         
         partial void OnSelectedMenuItemChanged(object? oldValue, object newValue)
         {
-            if (newValue is NavigationPaneItem { TargetType: not null } navigationPaneItem)
+            if (newValue is PageMetadata { TargetType: not null } navigationPaneItem)
             {
                 NavigateTo(navigationPaneItem.TargetType);
             }
@@ -37,7 +38,7 @@ namespace MES.WPF.Client.ViewModels
         {
             foreach (var item in MenuItems)
             {
-                (item as NavigationPaneItem).Path.Fill = FillColor;
+                (item as PageMetadata).Path.Fill = FillColor;
             }
 
             SetttingsIconColor = FillColor;
@@ -56,9 +57,9 @@ namespace MES.WPF.Client.ViewModels
         }
 
         // TODO WTS: Change the icons and titles for all HamburgerMenuItems here.
-        public ObservableCollection<NavigationPaneItem> MenuItems { get; set; } = new ObservableCollection<NavigationPaneItem>()
+        public ObservableCollection<PageMetadata> MenuItems { get; set; } = new ObservableCollection<PageMetadata>()
         {
-            new NavigationPaneItem()
+            new PageMetadata()
             {
                 Label = Resources.ShellKanbanPage,
                 Path = new Path()
@@ -73,7 +74,7 @@ namespace MES.WPF.Client.ViewModels
                 },
                 TargetType = typeof(KanbanViewModel)
             },
-            new NavigationPaneItem()
+            new PageMetadata()
             {
                 Label = Resources.ShellMainPage,
                 Path = new Path()
@@ -88,7 +89,7 @@ namespace MES.WPF.Client.ViewModels
                 },
                 TargetType = typeof(MainViewModel)
             },
-            new NavigationPaneItem()
+            new PageMetadata()
             {
                 Label = Resources.ShellPropertyGridPage,
                 Path = new Path()
@@ -103,7 +104,7 @@ namespace MES.WPF.Client.ViewModels
                 },
                 TargetType = typeof(PropertyGridViewModel)
             },
-            new NavigationPaneItem()
+            new PageMetadata()
             {
                 Label = Resources.ShellTileViewPage,
                 Path = new Path()
@@ -118,7 +119,7 @@ namespace MES.WPF.Client.ViewModels
                 },
                 TargetType = typeof(TileViewViewModel)
             },
-            new NavigationPaneItem()
+            new PageMetadata()
             {
                 Label = Resources.ShellTreeGridPage,
                 Path = new Path()
@@ -133,7 +134,7 @@ namespace MES.WPF.Client.ViewModels
                 },
                 TargetType = typeof(TreeGridViewModel)
             },
-            new NavigationPaneItem()
+            new PageMetadata()
             {
                 Label = Resources.ShellTreeViewPage,
                 Path = new Path()
@@ -148,7 +149,7 @@ namespace MES.WPF.Client.ViewModels
                 },
                 TargetType = typeof(TreeViewViewModel)
             },
-            new NavigationPaneItem()
+            new PageMetadata()
             {
                 Label = "金蝶测试",
                 Path = new Path()
@@ -208,7 +209,7 @@ namespace MES.WPF.Client.ViewModels
         private void OnNavigated(object sender, string viewModelName)
         {
             var item = MenuItems
-                .OfType<NavigationPaneItem>()
+                .OfType<PageMetadata>()
                 .FirstOrDefault(i => viewModelName == i.TargetType?.FullName);
 
             if (item != null)
@@ -223,12 +224,5 @@ namespace MES.WPF.Client.ViewModels
         {
             NavigateTo(typeof(SettingsViewModel));
         }
-    }
-
-    public class NavigationPaneItem
-    {
-        public string Label { get; set; }
-        public Path Path { get; set; }
-        public Type TargetType { get; set; }
     }
 }

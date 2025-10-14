@@ -2,11 +2,14 @@
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MES.Client.Core.Contracts.Services;
-using MES.Client.Core.Contracts.ViewModel;
+using MES.Client.Core.Contracts.ViewModels;
 using MES.WPF.Client.Helpers;
 
 namespace MES.WPF.Client.Services
 {
+    /// <summary>
+    /// 导航服务
+    /// </summary>
     public class NavigationService : INavigationService
     {
         private readonly IPageService _pageService;

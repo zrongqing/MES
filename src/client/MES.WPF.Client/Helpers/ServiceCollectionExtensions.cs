@@ -1,9 +1,11 @@
 ﻿using System.Linq;
 using System.Reflection;
 using System.Windows;
+using MES.Client.Core.Contracts.Views;
 using MES.Client.Core.Interfaces;
 using MES.WPF.Client.Contracts.Views;
 using Microsoft.Extensions.DependencyInjection;
+using Syncfusion.Windows.Tools.Controls;
 
 namespace MES.WPF.Client.Helpers;
 
@@ -27,57 +29,38 @@ public static class ServiceCollectionExtensions
             return services;
         }
 
-        // 找出所有 ViewModel
-        var viewModels = types
-            .Where(t => typeof(IRegisterViewModel).IsAssignableFrom(t))
-            .Where(t => t.IsClass && !t.IsAbstract && t.Name.EndsWith("ViewModel"))
-            .ToList();
-        // 注册所有的ViewModel
-        viewModels.ForEach(viewModel => services.AddTransient(viewModel));
-
         // 找到所有Page
         var pages = types
             .Where(t => t.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IRegisterPage<>)))
             .Where(t => t.IsClass && !t.IsAbstract && (t.Name.EndsWith("Page") || t.Name.EndsWith("View") || t.Name.EndsWith("Window")))
             .ToList();
         pages.ForEach(page => services.AddTransient(page));
-
-        if (!autoBindDataContext)
-            return services;
-
-        foreach (var vm in viewModels)
+        
+        foreach (var page in pages)
         {
-            var viewName = vm.Name.Replace("ViewModel", "Page");
+            var vmType = page.GetInterfaces()
+                .First(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IRegisterPage<>))
+                .GetGenericArguments()[0];
 
-            var view = types
-                .Where(t => typeof(IRegisterPage<>).IsAssignableFrom(t))
-                .FirstOrDefault(v => v.Name == viewName);
+            services.AddTransient(vmType);
 
-            if (view == null)
+            // 注册委托代理，自动绑定
+            if (autoBindDataContext)
             {
-                viewName = vm.Name.Replace("ViewModel", "View");
-
-                view = types
-                    .Where(t => typeof(IRegisterPage<>).IsAssignableFrom(t))
-                    .FirstOrDefault(v => v.Name == viewName);
-            }
-
-            if (view != null)
-            {
-                services.AddTransient(view, provider =>
+                services.AddTransient(page, provider =>
                 {
-                    var viewInstance = ActivatorUtilities.CreateInstance(provider, view);
+                    var viewInstance = ActivatorUtilities.CreateInstance(provider, page);
 
                     if (viewInstance is FrameworkElement fe)
                     {
-                        fe.DataContext = provider.GetRequiredService(vm);
+                        fe.DataContext = provider.GetRequiredService(vmType);
                     }
 
                     return viewInstance;
                 });
             }
         }
-
+        
         return services;
     }
 }

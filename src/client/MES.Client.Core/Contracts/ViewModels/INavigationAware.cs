@@ -1,4 +1,4 @@
-﻿namespace MES.Client.Core.Contracts.ViewModel
+﻿namespace MES.Client.Core.Contracts.ViewModels
 {
     public interface INavigationAware
     {

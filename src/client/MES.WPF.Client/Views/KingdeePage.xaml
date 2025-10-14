@@ -11,9 +11,9 @@
   xmlns:syncfusion="clr-namespace:Syncfusion.UI.Xaml.Kanban;assembly=Syncfusion.SfKanban.WPF"
   xmlns:viewModels="clr-namespace:MES.WPF.Client.ViewModels">
   <Grid>
-    <Grid.DataContext>
-      <viewModels:KingdeeViewModel></viewModels:KingdeeViewModel>
-    </Grid.DataContext>
+    <!-- <Grid.DataContext> -->
+    <!--   <viewModels:KingdeeViewModel></viewModels:KingdeeViewModel> -->
+    <!-- </Grid.DataContext> -->
     
     <Label Content="这是一个金蝶测试面板"></Label>
     

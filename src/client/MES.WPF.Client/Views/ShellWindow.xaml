@@ -8,10 +8,12 @@
     xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
     xmlns:properties="clr-namespace:MES.WPF.Client.Properties"
     xmlns:views="clr-namespace:MES.WPF.Client.Views"
+    xmlns:vm = 'clr-namespace:MES.WPF.Client.ViewModels'
     Style="{StaticResource CustomMetroWindow}"
     mc:Ignorable="d"
     MinWidth="500"
     MinHeight="350"
+    d:DataContext="{d:DesignInstance Type=vm:ShellViewModel}"
     Title="{x:Static properties:Resources.AppDisplayName}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -38,7 +40,12 @@
     </syncfusion:ChromelessWindow.LeftHeaderItemsSource>
     
     <syncfusion:ChromelessWindow.Content>
-        <syncfusion:SfNavigationDrawer x:Name="navigationDrawer" ItemsSource="{Binding MenuItems}" DisplayMemberPath="Label" DisplayMode="Expanded" IconMemberPath="Path" SelectedItem="{Binding SelectedMenuItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+        <syncfusion:SfNavigationDrawer 
+            x:Name="navigationDrawer" 
+            ItemsSource="{Binding MenuItems}" 
+            DisplayMemberPath="Label" DisplayMode="Expanded" 
+            IconMemberPath="Path" 
+            SelectedItem="{Binding SelectedMenuItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
             <syncfusion:SfNavigationDrawer.FooterItems>
                 <syncfusion:NavigationItem Header="Settings"  DataContext="{Binding Path=DataContext,ElementName=navigationDrawer}" Command="{Binding OptionsMenuItemInvokedCommand}" SelectionBackground="Transparent">
                     <syncfusion:NavigationItem.Icon>

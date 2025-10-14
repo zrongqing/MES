@@ -24,11 +24,11 @@ namespace MES.WPF.Client.Services
 
         public void Initialize(Frame shellFrame)
         {
-            if (_frame == null)
-            {
-                _frame = shellFrame;
-                _frame.Navigated += OnNavigated;
-            }
+            if (_frame == shellFrame) 
+                return;
+
+            _frame = shellFrame;
+            _frame.Navigated += OnNavigated;
         }
 
         public void UnsubscribeNavigation()
@@ -37,8 +37,7 @@ namespace MES.WPF.Client.Services
             _frame = null;
         }
 
-        public void GoBack()
-            => _frame.GoBack();
+        public void GoBack() => _frame.GoBack();
 
         public bool NavigateTo(string pageKey, object parameter = null, bool clearNavigation = false)
         {

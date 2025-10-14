@@ -90,7 +90,7 @@ namespace MES.WPF.Client
             services.AddSingleton<INavigationService, NavigationService>();
             
             // auto add views and viewmodels
-            services.AddViewsAndViewModels(assembly: Assembly.GetAssembly(this.GetType()));
+            //services.AddViewsAndViewModels(assembly: Assembly.GetAssembly(this.GetType()));
 
             // Views and ViewModels
             services.AddTransient<IShellWindow, ShellWindow>();

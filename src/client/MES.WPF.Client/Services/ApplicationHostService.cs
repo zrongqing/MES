@@ -65,7 +65,7 @@ namespace MES.WPF.Client.Services
                 _shellWindow = _serviceProvider.GetService(typeof(IShellWindow)) as IShellWindow;
                 _navigationService.Initialize(_shellWindow.GetNavigationFrame());
                 _shellWindow.ShowWindow();
-                _navigationService.NavigateTo(typeof(KanbanViewModel).FullName);
+                //_navigationService.NavigateTo(typeof(KanbanViewModel).FullName);
                 await Task.CompletedTask;
             }
         }

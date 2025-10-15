@@ -65,8 +65,9 @@ Presentation → Application → Core ← Infrastructure
 
 ## 技术路线
 
-- [ ] net8  
-- [混淆](https://zrongqing.github.io/posts/7f4ee469/)
+- NET8  
+- [Obfuscar](https://zrongqing.github.io/posts/7f4ee469/)
+- [NLog](https://github.com/NLog/NLog.Extensions.Logging/wiki/NLog-configuration-with-appsettings.json#loading-from-appsettingsjson)
 
 ### 客户端
 

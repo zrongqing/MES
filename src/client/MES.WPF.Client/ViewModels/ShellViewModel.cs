@@ -166,7 +166,7 @@ namespace MES.WPF.Client.ViewModels
             },
             new PageMetadata()
             {
-                Label = "登录界面",
+                Label = "测试模块",
                 Path = new Path()
                 {
                     Width = 15,
@@ -177,7 +177,7 @@ namespace MES.WPF.Client.ViewModels
                     Fill = new SolidColorBrush(Colors.Black),
                     Stretch = Stretch.Fill,
                 },
-                TargetType = typeof(LoginViewModel)
+                TargetType = typeof(TestViewModel)
             },
         };
 

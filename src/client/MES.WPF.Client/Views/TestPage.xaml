@@ -1,0 +1,50 @@
+﻿<Page
+  x:Class="MES.WPF.Client.Views.TestPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:vm = "clr-namespace:MES.WPF.Client.ViewModels"
+  xmlns:local="clr-namespace:MES.WPF.Client.Views"
+  mc:Ignorable="d"
+  Title="LoginPage"
+  Height="450"
+  Width="800"
+  d:DataContext="{d:DesignInstance vm:TestViewModel}"
+  >
+  
+  <Grid>
+    
+    <StackPanel
+      Orientation="Vertical"
+      >
+      
+      <StackPanel
+        Orientation="Vertical">
+      
+        <StackPanel
+          Orientation="Horizontal">
+          <Label Content="用户账号："></Label>
+          <TextBox
+            Width="120"
+            Text="{Binding Username,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+          <Label Content="用户密码："></Label>
+          <TextBox
+            Width="120"
+            Text="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
+        
+        <Button
+          Margin="3"
+          Content="登录测试"
+          Height="25"
+          Command="{Binding LoginCommand}"
+        ></Button>
+        
+      </StackPanel>
+      
+      
+      
+    </StackPanel>
+  </Grid>
+</Page>

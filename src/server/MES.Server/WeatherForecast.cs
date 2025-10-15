@@ -1,4 +1,4 @@
-namespace MES.Api;
+namespace MES.Server;
 
 public class WeatherForecast
 {

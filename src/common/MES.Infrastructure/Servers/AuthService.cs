@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Text;
 using MES.Core.Entities;
+using MES.Infrastructure.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -11,11 +12,11 @@ namespace MES.Infrastructure.Servers;
 
 public class AuthService
 {
-    private readonly AppDbContext _db;
+    private readonly MESDbContext _db;
     private readonly PasswordHasher<UserProfile> _hasher = new();
     private readonly IConfiguration _config;
 
-    public AuthService(AppDbContext db, IConfiguration config)
+    public AuthService(MESDbContext db, IConfiguration config)
     {
         _db = db;
         _config = config;

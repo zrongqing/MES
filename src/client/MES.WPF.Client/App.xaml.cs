@@ -14,6 +14,8 @@ using MES.WPF.Client.Views;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
 
 namespace MES.WPF.Client
 {
@@ -35,6 +37,8 @@ namespace MES.WPF.Client
             // Add your Syncfusion license key for WPF platform with corresponding Syncfusion NuGet version referred in project. For more information about license key see https://help.syncfusion.com/common/essential-studio/licensing/license-key.
             // Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Add your license key here"); 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXZedHVXRmNeVUVyXEJWYEk=");
+            
+            
         }
 
         protected override void OnStartup(StartupEventArgs e)
@@ -47,7 +51,7 @@ namespace MES.WPF.Client
         {
             try
             {
-                var appLocation = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                var appLocation = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location);
 
                 // For more information about .NET generic host see  https://docs.microsoft.com/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.0
                 _host = Host.CreateDefaultBuilder(e.Args)
@@ -57,6 +61,12 @@ namespace MES.WPF.Client
                             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                             .AddEnvironmentVariables()
                             .AddCommandLine(e.Args);
+                    })
+                    .ConfigureLogging(logging =>
+                    {
+                        // 添加日志
+                        logging.ClearProviders();
+                        logging.AddNLog();  // 会自动从 appsettings.json 获取配置
                     })
                     .ConfigureServices(ConfigureServices)
                     .Build();
@@ -142,6 +152,8 @@ namespace MES.WPF.Client
         {
             // TODO WTS: Please log and handle the exception as appropriate to your scenario
             // For more info see https://docs.microsoft.com/dotnet/api/system.windows.application.dispatcherunhandledexception?view=netcore-3.0
+            
+            NLog.LogManager.GetCurrentClassLogger().Error(e.Exception, "Unhandled exception");
         }
     }
 }

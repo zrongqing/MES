@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using MES.Core.Interfaces.Entity;
 
 namespace MES.Core.Common;
 

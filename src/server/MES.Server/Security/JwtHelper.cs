@@ -1,10 +1,10 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using MES.Server.Jwt;
+using MES.Core.Security;
 using Microsoft.IdentityModel.Tokens;
 
-namespace MES.Server;
+namespace MES.Server.Security;
 
 public class JwtHelper
 {
@@ -17,6 +17,10 @@ public class JwtHelper
         _jwtConfig = configuration.GetSection("JwtConfig").Get<JwtConfig>();
     }
 
+    /// <summary>
+    /// 目前这里是测试
+    /// </summary>
+    /// <returns></returns>
     public string CreateToken()
     {
         // 1. 定义需要使用到的Claims
@@ -26,7 +30,9 @@ public class JwtHelper
             new Claim(ClaimTypes.Role, "r_admin"), //HttpContext.User.IsInRole("r_admin")
             new Claim(JwtRegisteredClaimNames.Jti, "admin"),
             new Claim("Username", "Admin"),
-            new Claim("Name", "超级管理员")
+            new Claim("Name", "超级管理员"),
+            new Claim("Permission", Permissions.UserCreate),
+            new Claim("Permission", Permissions.UserUpdate)
         };
 
         // 2. 从 appsettings.json 中读取SecretKey

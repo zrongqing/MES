@@ -1,4 +1,4 @@
-﻿namespace MES.Server.Jwt;
+﻿namespace MES.Server.Security;
 
 public class JwtConfig
 {
@@ -21,4 +21,9 @@ public class JwtConfig
     /// 过期时间
     /// </summary>
     public int Expired { get; set; } = 60;
+    
+    /// <summary>
+    /// 是否启用
+    /// </summary>
+    public bool Enabled { get; set; } = true;
 }

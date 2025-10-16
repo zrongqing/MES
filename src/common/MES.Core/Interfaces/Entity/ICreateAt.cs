@@ -1,4 +1,4 @@
-﻿namespace MES.Core.Common;
+﻿namespace MES.Core.Interfaces.Entity;
 
 public interface ICreateAt
 {

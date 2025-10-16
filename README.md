@@ -1,6 +1,8 @@
 # MES
 MES项目
 
+个人的一些[开发过程文档](./doc)
+
 ## 解决方案结构
 
 ```
@@ -20,7 +22,7 @@ MyMES/
 │   ├── Services/               # 外部服务（如金蝶、PLC、MQ、API）
 │   └── Migrations/             # EF Core Migration 文件
 │
-├── MyMES.Application/          # 应用层（Application Service）
+├── MyMES.AppServices/          # 应用层（Application Service）
 │   ├── Services/               # 应用服务（业务用例）
 │   ├── DTOs/                   # 输入输出模型（ViewModel专用）
 │   ├── Commands/Queries/       # CQRS 分层（可选）
@@ -68,6 +70,7 @@ Presentation → Application → Core ← Infrastructure
 - NET8  
 - [Obfuscar](https://zrongqing.github.io/posts/7f4ee469/)
 - [NLog](https://github.com/NLog/NLog.Extensions.Logging/wiki/NLog-configuration-with-appsettings.json#loading-from-appsettingsjson)
+- [ASP.NET Authentication](https://learn.microsoft.com/zh-cn/aspnet/core/security/authentication/?view=aspnetcore-8.0)  
 
 ### 客户端
 
@@ -81,7 +84,3 @@ Presentation → Application → Core ← Infrastructure
 
 ## 功能点
 
-- [ ] 登录系统
-- [ ] 自动更新模块
-- [ ] 接入Github自动化编译系统
-- [ ] 角色管理系统

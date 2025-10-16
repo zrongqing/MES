@@ -29,3 +29,9 @@
       context: .
       dockerfile: WebApplication3/Dockerfile
 
+  mes.application:
+    image: mes.application
+    build:
+      context: .
+      dockerfile: src/client/MES.Application/Dockerfile
+
